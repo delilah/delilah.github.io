@@ -25,16 +25,23 @@
       background-color: #f0f0f0;
     }
 
+
+
     .header {
       height: auto;
       width: 100%;
       background-color: #fff;
       color: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+}
 
     .header img {
       width: 100px;
@@ -42,12 +49,6 @@
       margin-top: 70px;
     }
 
-    .header p {
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      font-size: 2em;
-      text-align: center;
-    }
 
     .INTRO-block, .ABOUT-block {
       flex: 1;
@@ -87,6 +88,10 @@
       width: 95%;
     }
 
+    .content-row div {
+  margin: 0 10px 0 10px; 
+}
+
     .content-column {
       display: flex;
       flex-direction: column;
@@ -100,6 +105,13 @@
       margin: auto;
       text-align: left;
     }
+
+    .text-title {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+    }
+
 
     .footer {
       height: 120px;
@@ -146,15 +158,15 @@
     <div class="frame">
         <div class="header">
             <img src="img/header.png" alt="delilah 8bit">
-            <p>Delilah Pavoni</p>
+            <div>Delilah Pavoni</div>
         </div>
         <div class="INTRO-block">
             <div class="content-row">
                
-                <div>
+              <div class="text-container">
                     <b>HELLO!</b><br>
                     <br>
-                    I'm Delilah - gamedev 🎮 and software developer. VR is my soft spot since 2006, when I first got to use it. <br>
+                    I'm <b>Delilah</b> - gamedev 🎮 and software developer. VR is my soft spot since 2006, when I first got to use it. <br>
                     <br>
                     My tool of choice for creating interactive experiences is (currently) Unity. Some of my favourite projects can be seen <a href="https://github.com/delilah/bites"><b>HERE</b></a><br>
                     <br>I like (statically) typed languages and particle systems.<br>
@@ -173,7 +185,7 @@
         </div>
         <div class="WORK-block">
             <div class="content-column">
-                <h2>WHAT I DO</h2>
+              <div class="text-title"><h2>WHAT I DO</h2></div>
                 <div class="text-container">
                     <p>I mostly do programming and I enjoy wholesome projects with a purpose. And spooky things. <br>
                         <br>
@@ -204,8 +216,9 @@
         <div class="ABOUT-block">
             <div class="content-row">
                 <img src="img/about.jpg" alt="About Image">
-                <p>I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, so feel free to poke me! I like getting to know like-minded people!<br><br>
-                    You might see me around while attending some events, feel free to say hello!<br><br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a></p>
+                <div class="text-container">I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, so feel free to poke me! I like getting to know like-minded people!<br><br>
+                    You might see me around while attending some events, feel free to say hello!<br><br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
+                  </div>
             </div>
         </div>
         <div class="footer">
