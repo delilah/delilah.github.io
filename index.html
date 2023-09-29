@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         // This is the Theme Switcher
         // Initialize the boolean variable based on the current theme
@@ -171,6 +171,8 @@
         });
         // Start the timeline
         pulseHeartTL.play();
+
+
         // This is the spooky glow for the dark mode 
         const glowing = document.getElementById("glowing");
         var glowingTL;
@@ -184,17 +186,21 @@
                     });
                     glowingTL.to("#glowing", {
                         opacity: 1,
-                        duration: 0.5
+                        duration: 0.5,
+                        ease: Power1.easeInOut
                     });
                     glowingTL.to({}, {
-                        duration: 0.6
+                        duration: 0.6,
+                        ease: Power1.easeInOut
                     });
                     glowingTL.to("#glowing", {
                         opacity: 0,
-                        duration: 0.4
+                        duration: 0.4,
+                        ease: Power1.easeInOut
                     });
                     glowingTL.to({}, {
-                        duration: 6
+                        duration: 6,
+                        ease: Power1.easeInOut
                     });
                 }
                 glowingTL.restart();
