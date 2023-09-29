@@ -87,7 +87,10 @@
                         <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
                     </div>
                 </div>
+                <div>
+                <img id="skull" src="img/skull.png" alt="Intro Image" class="skull">
                 <img src="img/intro.png" alt="Intro Image">
+              </div>
             </div>
         </div>
         <div class="WORK-block">
@@ -132,90 +135,100 @@
 
     <script>
         // This is the Theme Switcher
-        // Initialize the boolean variable based on the current theme
-        var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
-        document.getElementById('theme-switch').addEventListener('change', function(event) {
-            if (event.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.getElementById('stylesheet').href = 'dark.css';
-                isDarkThemeActive = true; // Set the variable to true when dark theme is active
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.getElementById('stylesheet').href = 'light.css';
-                isDarkThemeActive = false; // Set the variable to false when light theme is active
-            }
-        });
+var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
+document.getElementById('theme-switch').addEventListener('change', function(event) {
+  if (event.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('stylesheet').href = 'dark.css';
+    isDarkThemeActive = true;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.getElementById('stylesheet').href = 'light.css';
+    isDarkThemeActive = false;
+  }
+});
 
-        // This is the heart animation
-        const heart = document.getElementById('heart');
-        const pulseHeartTL = gsap.timeline({
-            repeat: -1, 
-            yoyo: true, 
-            repeatDelay: 3,
-        });
+// This is the heart animation
+const heart = document.getElementById('heart');
+const pulseHeartTL = gsap.timeline({
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 3
+});
 
-        
-        pulseHeartTL.to(heart, 0.3, {
-            scale: 1.2,
-            ease: Power1.easeInOut
-        }).to(heart, 0.3, {
-            scale: 1,
-            ease: Power1.easeInOut
-        });
-        pulseHeartTL.to(heart, 0.3, {
-            scale: 1.2,
-            ease: Power1.easeInOut
-        }).to(heart, 0.3, {
-            scale: 1,
-            ease: Power1.easeInOut
-        });
-        // Start the timeline
-        pulseHeartTL.play();
+pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+pulseHeartTL.play();
 
+// This is the spooky glow for the dark mode
+const glowing = document.getElementById("glowing");
+let glowingTL;
 
-        // This is the spooky glow for the dark mode 
-        const glowing = document.getElementById("glowing");
-        var glowingTL;
-        // Execute the animation only if the dark theme is active
-        function restartAnimation() {
-            if (isDarkThemeActive) {
-                if (!glowingTL) {
-                    glowingTL = gsap.timeline();
-                    glowingTL.set("#glowing", {
-                        opacity: 0
-                    });
-                    glowingTL.to("#glowing", {
-                        opacity: 1,
-                        duration: 0.5,
-                        ease: Power1.easeInOut
-                    });
-                    glowingTL.to({}, {
-                        duration: 0.6,
-                        ease: Power1.easeInOut
-                    });
-                    glowingTL.to("#glowing", {
-                        opacity: 0,
-                        duration: 0.4,
-                        ease: Power1.easeInOut
-                    });
-                    glowingTL.to({}, {
-                        duration: 6,
-                        ease: Power1.easeInOut
-                    });
-                }
-                glowingTL.restart();
-            } else {
-                if (glowingTL) {
-                    glowingTL.kill();
-                    glowingTL = null;
-                }
-                gsap.set("#glowing", {
-                    opacity: 0
-                });
-            }
-            setTimeout(restartAnimation, 5000);
-        }
-        restartAnimation();
+function startGlowingAnimation() {
+  if (isDarkThemeActive) {
+    if (!glowingTL) {
+      glowingTL = gsap.timeline();
+      glowingTL.set("#glowing", { opacity: 0 });
+      glowingTL.to("#glowing", { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
+      glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
+      glowingTL.to("#glowing", { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
+      glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+    }
+    glowingTL.restart();
+  } else {
+    if (glowingTL) {
+      glowingTL.kill();
+      glowingTL = null;
+    }
+    gsap.set("#glowing", { opacity: 0 });
+  }
+}
+
+startGlowingAnimation();
+
+function restartGlowingAnimation() {
+  startGlowingAnimation();
+  setTimeout(restartGlowingAnimation, 5000);
+}
+
+restartGlowingAnimation();
+
+// Skull glitch animation for the dark mode
+gsap.set("#skull", { opacity: 0 });
+let skullTL;
+
+function startSkullAnimation() {
+  if (isDarkThemeActive) {
+    if (!skullTL) {
+      skullTL = gsap.timeline({ repeat: -1 });
+      skullTL.to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" })
+        .to("#skull", { opacity: 0, duration: 0.2 })
+        .to("#skull", { opacity: 1, duration: 0.2 })
+        .to("#skull", { opacity: 0, duration: 0.3 })
+        .to("#skull", { opacity: 0, duration: gsap.utils.random(7, 13) })
+        .to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" });
+    }
+    skullTL.play();
+  } else {
+    if (skullTL) {
+      skullTL.kill();
+      skullTL = null;
+    }
+    gsap.set("#skull", { opacity: 0 });
+  }
+}
+
+startSkullAnimation();
+
+function restartSkullAnimation() {
+  startSkullAnimation();
+  setTimeout(restartSkullAnimation, 5000);
+}
+
+restartSkullAnimation();
+
     </script>
 </body>
 
