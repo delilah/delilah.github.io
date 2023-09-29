@@ -1,256 +1,216 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
     <title>Delilah's playground</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            /* light theme color */
+            transition: .4s;
+        }
 
-    .frame {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      min-height: 100%;
-      background-color: #f0f0f0;
-    }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
 
+        [data-theme="dark"] .slider {
+            background-color: #282828;
+            /* dark theme color */
+        }
 
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
 
-    .header {
-      height: auto;
-      width: 100%;
-      background-color: #fff;
-      color: #000;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+        .slider.round {
+            border-radius: 34px;
+        }
 
-  align-items: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  font-size: 4em;
-  text-align: center;
-}
-
-    .header img {
-      width: 100px;
-      height: 100px;
-      margin-top: 70px;
-    }
-
-
-    .INTRO-block, .ABOUT-block {
-      flex: 1;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-    }
-
-    .intro img {
-      width: 50px;
-      height: 50px;
-        padding: 2px;    
-    }
-
-    .WORK-block {
-      flex: 1;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #e9e9e9;
-    }
-
-    .content-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 95%;
-    }
-
-    .content-row-icons {
-      display: flex;
-      flex-direction: row;
-      width: 95%;
-    }
-
-    .content-row div {
-  margin: 0 10px 0 10px; 
-}
-
-    .content-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 95%;
-    }
-
-    .text-container {
-      width: 70%;
-      margin: auto;
-      text-align: left;
-    }
-
-    .text-title {
-      width: 70%;
-      margin: auto;
-      text-align: center;
-    }
-
-
-    .footer {
-      height: 120px;
-      width: 100%;
-      background-color: #e9e9e9;
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .footer img {
-      width: 50px;
-      height: 50px;
-      margin-top: 70px;
-    }
-
-    .INTRO-block .content-row {
-      max-width: 800px;
-    }
-
-    .WORK-block .content-column {
-      max-width: 999px;
-    }
-
-    .ABOUT-block .content-row {
-      max-width: 800px;
-    }
-
-      .INTRO-block, .WORK-block, .ABOUT-block {
-      padding: 50px 0; 
-    }
-
-
-</style>
-
-
-<script src="gsap.min.js"></script>
-
-
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+    <script src="gsap.min.js"></script>
+    <!-- Your CSS file -->
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
 </head>
+
 <body>
     <div class="frame">
         <div class="header">
+            <img id="glowing" src="img/glow.png" class="glowing" alt="spooky">
             <img src="img/header.png" alt="delilah 8bit">
             <div>Delilah Pavoni</div>
+            <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+            </label>
         </div>
         <div class="INTRO-block">
             <div class="content-row">
-               
-              <div class="text-container">
+                <div class="text-container">
                     <b>HELLO!</b><br>
-                    <br>
-                    I'm <b>Delilah</b> - gamedev 🎮 and software developer. VR is my soft spot since 2006, when I first got to use it. <br>
-                    <br>
-                    My tool of choice for creating interactive experiences is (currently) Unity. Some of my favourite projects can be seen <a href="https://github.com/delilah/bites"><b>HERE</b></a><br>
+                    <br> I'm <b>Delilah</b> - gamedev 🎮 and software developer. VR is my soft spot since 2006, when I first got to use it. <br>
+                    <br> My tool of choice for creating interactive experiences is (currently) Unity. Some of my favourite projects can be seen <a href="https://github.com/delilah/bites"><b>HERE</b></a><br>
                     <br>I like (statically) typed languages and particle systems.<br>
-                    <br>
-                    Currently obsessed with plants, cats, pizza and shaders 🌐✨.<br>
-                    <br>
-                    Based in Amsterdam, NL<br><br>
+                    <br> Currently obsessed with plants, cats, pizza and shaders 🌐✨.<br>
+                    <br> Based in Amsterdam, NL<br><br>
                     <div class="content-row-icons">
                         <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
                         <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
                     </div>
                 </div>
-                   
                 <img src="img/intro.png" alt="Intro Image">
             </div>
         </div>
         <div class="WORK-block">
             <div class="content-column">
-              <div class="text-title"><h2>WHAT I DO</h2></div>
+                <div class="text-title">
+                    <h2>WHAT I DO</h2>
+                </div>
                 <div class="text-container">
                     <p>I mostly do programming and I enjoy wholesome projects with a purpose. And spooky things. <br>
+                        <br> I build experiences - be it games, interactive software or installations, AR/VR. My tool of choice is (currently) Unity and C#. I do explore other options as well and play with other technologies when I have the capacity to do so. <br>
                         <br>
-                        I build experiences - be it games, interactive software or installations, AR/VR. My tool of choice is (currently) Unity and C#. I do explore other options as well and play with other technologies when I have the capacity to do so. <br>
-                        <br>
-                        <br>
-                        Some of my tasks are: <br>
-                        <ul>
-                            <li>Help with estimates and projects requirements definitions</li>
-                            <li>Build Prototypes and Proof of Concept</li>
-                            <li>Implementing core (/game mechanic)</li>
-                            <li>Implement design / UI / audio</li>
-                            <li>Implement third party APIs for various purposes</li>
-                            <li>A task I never did? It's ok, give me some time, I'll figure it out.</li>
-                        </ul>
-                        <br>
-                        I like GIT, I use tickets and I can roll spaghetti very fast.  <br>
-                        <br>
-                        I do also value and keep learning about communication, leadership, diversity and how to best support people around me. I advocate for inclusivity and embracing a wide range of perspectives and backgrounds.
-                        <br>
-                       
-            
-                    
+                        <br> Some of my tasks are: <br>
+                    <ul>
+                        <li>Help with estimates and projects requirements definitions</li>
+                        <li>Build Prototypes and Proof of Concept</li>
+                        <li>Implementing core (/game mechanic)</li>
+                        <li>Implement design / UI / audio</li>
+                        <li>Implement third party APIs for various purposes</li>
+                        <li>A task I never did? It's ok, give me some time, I'll figure it out.</li>
+                    </ul>
+                    <br> I like GIT, I use tickets and I can roll spaghetti very fast. <br>
+                    <br> I do also value and keep learning about communication, leadership, diversity and how to best support people around me. I advocate for inclusivity and embracing a wide range of perspectives and backgrounds. <br>
                     </p>
                 </div>
             </div>
         </div>
         <div class="ABOUT-block">
             <div class="content-row">
-                <img src="img/about.jpg" alt="About Image">
-                <div class="text-container">I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, so feel free to poke me! I like getting to know like-minded people!<br><br>
-                    You might see me around while attending some events, feel free to say hello!<br><br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
-                  </div>
+                <img src="img/about.png" alt="About Image">
+                <div class="text-container">I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, so feel free to poke me! I like getting to know like-minded people!<br><br> You might see me around while attending some events, feel free to say hello!<br><br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
+                </div>
             </div>
         </div>
         <div class="footer">
             <div class="content-column">
                 <img id="heart" src="img/heart.png" alt="8bit">
                 <p>Thanks for visiting my page!</p>
-                <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank">Patrick Macchi</a><br>
-                    Social Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></p>
+                <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></p>
             </div>
         </div>
     </div>
-
-
+    
     <script>
+        // This is the Theme Switcher
+        // Initialize the boolean variable based on the current theme
+        var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.getElementById('theme-switch').addEventListener('change', function(event) {
+            if (event.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('stylesheet').href = 'dark.css';
+                isDarkThemeActive = true; // Set the variable to true when dark theme is active
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('stylesheet').href = 'light.css';
+                isDarkThemeActive = false; // Set the variable to false when light theme is active
+            }
+        });
+
+        // This is the heart animation
         const heart = document.getElementById('heart');
-      
-        function pulse() {
-          const scaleUp = TweenMax.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut });
-          const scaleDown = TweenMax.to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
-          const pulseTween = new TimelineMax({ repeat: 1, onComplete: pause });
-          pulseTween.add(scaleUp).add(scaleDown);
-        }
-      
-        function pause() {
-          // Delay for 5 seconds
-          TweenMax.delayedCall(3, pulse);
-        }
-      
-        pulse();
-      </script>
+        const pulseHeartTL = gsap.timeline({
+            repeat: -1, 
+            yoyo: true, 
+            repeatDelay: 3,
+        });
 
-
+        
+        pulseHeartTL.to(heart, 0.3, {
+            scale: 1.2,
+            ease: Power1.easeInOut
+        }).to(heart, 0.3, {
+            scale: 1,
+            ease: Power1.easeInOut
+        });
+        pulseHeartTL.to(heart, 0.3, {
+            scale: 1.2,
+            ease: Power1.easeInOut
+        }).to(heart, 0.3, {
+            scale: 1,
+            ease: Power1.easeInOut
+        });
+        // Start the timeline
+        pulseHeartTL.play();
+        // This is the spooky glow for the dark mode 
+        const glowing = document.getElementById("glowing");
+        var glowingTL;
+        // Execute the animation only if the dark theme is active
+        function restartAnimation() {
+            if (isDarkThemeActive) {
+                if (!glowingTL) {
+                    glowingTL = gsap.timeline();
+                    glowingTL.set("#glowing", {
+                        opacity: 0
+                    });
+                    glowingTL.to("#glowing", {
+                        opacity: 1,
+                        duration: 0.5
+                    });
+                    glowingTL.to({}, {
+                        duration: 0.6
+                    });
+                    glowingTL.to("#glowing", {
+                        opacity: 0,
+                        duration: 0.4
+                    });
+                    glowingTL.to({}, {
+                        duration: 6
+                    });
+                }
+                glowingTL.restart();
+            } else {
+                if (glowingTL) {
+                    glowingTL.kill();
+                    glowingTL = null;
+                }
+                gsap.set("#glowing", {
+                    opacity: 0
+                });
+            }
+            setTimeout(restartAnimation, 5000);
+        }
+        restartAnimation();
+    </script>
 </body>
-</html>
 
+</html>
