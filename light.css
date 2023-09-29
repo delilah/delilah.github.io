@@ -99,7 +99,8 @@ margin: 0 10px 0 10px;
 .text-container {
   width: 70%;
   margin: auto;
-  text-align: left;
+  text-align: left
+  font-size: 1em; 
 }
 
 .text-title {
