@@ -13,6 +13,12 @@ body, html {
 /* CSS for mobile devices */
 @media only screen and (max-width: 768px) {
     body {
+        font-size: 1.3em; 
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
         font-size: 1.5em; 
     }
 }
