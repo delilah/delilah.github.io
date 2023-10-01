@@ -11,7 +11,7 @@ body, html {
 }
 
 /* CSS for smaller devices */
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .INTRO-block .content-row,
     .ABOUT-block .content-row {
         flex-direction: column !important;
