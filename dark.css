@@ -10,12 +10,35 @@ body, html {
   font-size: 1em;  
 }
 
-/* CSS for mobile devices */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 1.1em; 
+/* CSS for smaller devices */
+@media (max-width: 500px) {
+    .INTRO-block .content-row,
+    .ABOUT-block .content-row {
+        flex-direction: column !important;
     }
-}
+
+    .INTRO-block .content-row div img {
+        order: -1;
+    }
+
+    .INTRO-block .content-row .text-container {
+        order: 2;
+    }
+
+    .ABOUT-block .content-row > div:first-child {
+        order: -1;
+    }
+
+    .ABOUT-block .content-row > div:last-child {
+        order: 1;
+    }
+  
+  
+    .text-container {
+        font-size: 1.5em; 
+      }
+  }
+
 
 .frame {
   display: flex;
