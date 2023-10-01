@@ -13,9 +13,23 @@ body, html {
 /* CSS for mobile devices */
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 1.2em; 
+        font-size: 1.1em; 
     }
 }
+
+@media (max-width: 400px) {
+    .ABOUT-block .content-row {
+      flex-direction: column;
+    }
+  
+    .ABOUT-block .content-row img {
+      order: -1;
+    }
+  
+    .ABOUT-block .text-container {
+      order: 2;
+    }
+  }
 
 
 .frame {
