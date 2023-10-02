@@ -20,11 +20,11 @@ body, html {
     }
 
     .INTRO-block .content-row div img {
-        order: -1;
+        order: 1;
     }
 
     .INTRO-block .content-row .text-container {
-        order: 2;
+        order: -1;
     }
 
     .ABOUT-block .content-row > div:first-child {
