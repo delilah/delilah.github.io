@@ -80,13 +80,13 @@
                 <div class="text-container">
                     <b>HELLO!</b><br>
                     <br> I'm <b>Delilah</b> - gamedev 🎮 and software developer. VR is my soft spot since 2006, when I first got to use it. <br>
-                    <br> My tool of choice for creating interactive experiences is (currently) Unity. Some of my favourite projects can be seen <a href="https://github.com/delilah/bites"><b>HERE</b></a><br>
+                    <br> My tool of choice for creating interactive experiences is (currently) Unity. Some of my favourite projects can be seen <a href="projects.html"><b>HERE</b></a><br>
                     <br>I like (statically) typed languages and particle systems.<br>
                     <br> Currently obsessed with plants, cats, pizza and shaders 🌐✨.<br>
                     <br> Based in Amsterdam, NL<br><br>
                     <div class="content-row-icons">
-                        <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
                         <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
+                        <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
                     </div>
                 </div>
                 <div>
@@ -112,10 +112,16 @@
                         <li>Implementing core (/game mechanic)</li>
                         <li>Implement design / UI / audio</li>
                         <li>Implement third party APIs for various purposes</li>
+                        <li>Be part of the creative process</li>
+                        <li>Experiment with new technologies</li>
+                        <li>Support people with onboarding and coaching where needed</li>
                         <li>A task I never did? It's ok, give me some time, I'll figure it out.</li>
                     </ul>
                     <br> I like GIT, I use tickets and I can roll spaghetti very fast. <br>
                     <br> I do also value and keep learning about communication, leadership, diversity and how to best support people around me. I advocate for inclusivity and embracing a wide range of perspectives and backgrounds. <br>
+                    <br>
+                    <br>Some of my favourite projects can be seen <a href="projects.html"><b>HERE</b></a><br>
+
                     </p>
                 </div>
             </div>
@@ -148,19 +154,36 @@
     </div>
 
     <script>
+        // Get the current theme from local storage when the page is loaded.
+        // If no theme was previously saved, it defaults to 'light'.
+        var currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        document.getElementById('stylesheet').href = currentTheme + '.css';
+        var isDarkThemeActive = currentTheme === 'dark';
+
+        // Set the "checked" status of the checkbox based on the current theme.
+        var themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.checked = isDarkThemeActive;
+
         // This is the Theme Switcher
-var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
-document.getElementById('theme-switch').addEventListener('change', function(event) {
-  if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.getElementById('stylesheet').href = 'dark.css';
-    isDarkThemeActive = true;
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    document.getElementById('stylesheet').href = 'light.css';
-    isDarkThemeActive = false;
-  }
-});
+        themeSwitch.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('stylesheet').href = 'dark.css';
+                isDarkThemeActive = true;
+                // Save the current theme to local storage.
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('stylesheet').href = 'light.css';
+                isDarkThemeActive = false;
+                // Save the current theme to local storage.
+                localStorage.setItem('theme', 'light');
+            }
+            // Restart animations to reflect changes in theme.
+            restartGlowingAnimation();
+            restartSkullAnimation();
+        });
 
 // This is the heart animation
 const heart = document.getElementById('heart');

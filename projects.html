@@ -82,6 +82,7 @@
                     <br>Here are some of my favourite projects.
                     <br>
                     <br>This is just an overview, not an extensive portfolio. Ask me more about my work!
+                    <br><br>(or <a href="index.html">go back to previous page</a>)
                     <br><br>
                     
                     <div class="content-row-icons">
@@ -285,20 +286,37 @@
     </div>
 
     <script>
-        // This is the Theme Switcher
-var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
-document.getElementById('theme-switch').addEventListener('change', function(event) {
-  if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.getElementById('stylesheet').href = 'dark.css';
-    isDarkThemeActive = true;
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    document.getElementById('stylesheet').href = 'light.css';
-    isDarkThemeActive = false;
-  }
-});
+        
+        // Get the current theme from local storage when the page is loaded.
+        // If no theme was previously saved, it defaults to 'light'.
+        var currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        document.getElementById('stylesheet').href = currentTheme + '.css';
+        var isDarkThemeActive = currentTheme === 'dark';
 
+        // Set the "checked" status of the checkbox based on the current theme.
+        var themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.checked = isDarkThemeActive;
+
+        // This is the Theme Switcher
+        themeSwitch.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('stylesheet').href = 'dark.css';
+                isDarkThemeActive = true;
+                // Save the current theme to local storage.
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('stylesheet').href = 'light.css';
+                isDarkThemeActive = false;
+                // Save the current theme to local storage.
+                localStorage.setItem('theme', 'light');
+            }
+            // Restart animations to reflect changes in theme.
+            restartGlowingAnimation();
+            restartSkullAnimation();
+        });
 // This is the heart animation
 const heart = document.getElementById('heart');
 const pulseHeartTL = gsap.timeline({
