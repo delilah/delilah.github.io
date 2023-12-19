@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delilah's playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            z-index: 9999;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            /* light theme color */
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        [data-theme="dark"] .slider {
+            background-color: #282828;
+            /* dark theme color */
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+    <script src="gsap.min.js"></script>
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
+</head>
+
+<body>
+    <div class="frame">
+        <div class="header">
+            <img id="glowing" src="img/glow.png" class="glowing" alt="spooky">
+            <img src="img/header.png" alt="delilah 8bit">
+            <div>Delilah Pavoni</div>
+            <label class="switch">
+                <input type="checkbox" id="theme-switch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="INTRO-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>SHOW TIME!</b><br>
+                    <br>Here are some of my favourite projects.
+                    <br>
+                    <br>This is just an overview, not an extensive portfolio. Ask me more about my work!
+                    <br><br>
+                    
+                    <div class="content-row-icons">
+                        <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
+                        <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
+                    </div>
+                </div>
+                <div>
+                <img id="skull" src="img/skull.png" alt="Intro Image" class="skull">
+                <img src="img/intro.png" alt="Intro Image">
+              </div>
+            </div>
+        </div>
+
+
+        <div class="PROJECT-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>O21 (VR Game)</b><br>
+                    <ul>
+                        <li><a href="url">Itch.io O21 page and free download</a></li>
+                    </ul>
+                    <br>
+                    <br>A meditative VR experience. Observe the world you're immersed in. <br>
+                    <br>Interact with the crystals to see and hear how the environment around you changes according to your actions.<br>
+                    <br>Requires a VR headset and tracked controllers.<br>                    <br>
+                </div>
+                <div>
+                    <img src="img/projects/o21.gif" alt="o21">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="PROJECT1-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>Cable Detective - AWS re:Invent</b><br>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=cSw3AHT8v-g">Game is not available online anymore, but you can see a walkthrough thanks to this YouTuber - (link to video)</a></li>
+                    </ul>
+                    <br>
+                    Help save this year's AWS re:Invent! <br>Can you solve the mystery of the twisted cable tangler?<br>
+                    <br>
+                </div>
+                <div>
+                    <img src="img/projects/cabledetective.jpeg" alt="Intro Image">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="PROJECT-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>Eden Unhearted (VR Game)</b><br>
+                    <ul>
+                        <li>🏆 <a href="https://thefwa.com/cases/eden-unearthed-vr-game"><b>Award</b>: FWA of the day - 12 Nov 2021</a></li>
+                    </ul>
+                    <br>
+                    <br>Explore the world of Netflix’s original anime series, Eden, by diving into a VR game that takes you on a trip through the show’s environment. <br>
+                    <br>Bike through landscapes featured in the series, collecting apples and dodging obstacles while getting a close-up look at Eden’s luscious scenery.<br>
+                    
+                </div>
+                <div>
+                    <img src="img/projects/Eden_Unearthed.jpg" alt="Intro Image">
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="PROJECT1-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>Tic Tac GUM: Chew & Play</b><br>
+                    <ul>
+                        <li>🏆 <a href="https://thefwa.com/cases/tic-tac-gum-chew-play"><b>Award</b>: FWA of the day - 22 June 2018</a></li>
+                        <li>📰 <a href="https://www.lbbonline.com/news/snapchat-launches-first-ever-chew-powered-snapchat-lens-games-with-tic-tac-gum">lbbonline: First ever chew powered snapchat lens games</a></li>
+                    </ul>
+                    <br>
+                    
+                    <br>Styled in 8-bit and starring your mouth as a controller, Chew & Play is the world’s first Snapchat gamified lens you control by chewing.<br>
+                    
+                </div>
+                <div>
+                    <img src="img/projects/TicTacGumSnap.gif" alt="Tic Tac Gum">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="PROJECT-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>Tetris Twist</b><br>
+                    <ul>
+                        <li>📰 <a href="https://tetris.com/product/10/tetris-twist">Official News</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=bONVUFNQ4w4">Complete walkthrough (YouTube)</a></li>
+                    </ul>
+
+                    <br>In Tetris Twist, you'll puzzle your way through different cities. Discover new, fun ways to play Tetris with a twist, or play Marathon Mode to experience the traditional gameplay.<br>
+                    
+                </div>
+                <div>
+                    <img src="img/projects/Tetris_Twist.gif" alt="Tetris Twist">
+                </div>
+            </div>
+        </div>
+
+        <div class="PROJECT1-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>ELLINIKON Experience Centre</b><br>
+                    <ul>
+                        <li>📰 <a href="https://media.monks.com/case-studies/ellinikon-experience-centre">Ellinikon: case study</a></li>
+                    </ul>
+                    <br>An old airport hangar becomes an interactive experience center for Ellinikon. <br>
+                    <br>This ambitious project showcases the future of urban spaces through a synergistic blend of physical and digital design.<br> 
+                    <br>Visitors are invited to immerse themselves in the past, present, and future of the area, offering a unique glimpse into Europe's largest urban regeneration project.
+                    <br>
+                    <br>In the image: one of the installations I built software for.
+                </div>
+                <div>
+                    <img src="img/projects/vgs_ellinikon.gif" alt="Ellinikon">
+                </div>
+            </div>
+        </div>
+
+        <div class="PROJECT-block">
+            <div class="content-row">
+                <div class="text-container">
+                    <b>Shiseido - 'The Living Red Art Show'</b><br>
+                    <ul>
+                        <li>📰 <a href="https://www.moodiedavittreport.com/shiseido-and-cdfg-make-powerful-statement-in-hainan-with-the-living-red-art-show/">The Living Red Art Show: The Moodie Davitt Report</a></li>
+                    </ul>
+                    <br>
+                    <br>Pop up Stand and experience for Shiseid and the project "The Living Red Art Show". 
+                    <br> For this, an interactive application was built. Digital face scan, skin  to promote beauty products in a fresh and entertaining way.
+                    <br>
+                    <br>Image courtesy of moodiedavittreport and depicts the software that was created for this installation.
+
+                </div>
+                <div>
+                    <img src="img/projects/shiseido_livingred.jpg" alt="Shiseido Living Red">
+                </div>
+            </div>
+        </div>
+
+        <div class="PROJECT1-block">
+            <div class="content-row">
+                <div class="text-container">
+                 <br>
+                    
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="WORK-block">
+            <div class="content-column">
+                <div class="text-title">
+                    <h2>Some other projects I contributed at that won awards</h2>
+                </div>
+                <div class="text-container">
+                    <p>
+                    <ul>
+                        <li>🏆 <a href="https://thefwa.com/cases/anne-frank-house-the-bookcase-for-tolerance"><b>Award</b>: Anne Frank: BookCase for Tolerance</a></li>
+                        <li>🏆 <a href="https://thefwa.com/cases/signal-little-brush-big-brush-ar-experience"><b>Award</b>: Little Brush Big Brush</a></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ABOUT-block">
+          <div class="content-row">
+            <div>
+              <img src="img/about.png" alt="About Image">
+            </div>
+              <div class="text-container">
+                I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, 
+                so feel free to poke me! I like getting to know like-minded people!<br><br> You might see me around while attending some events, feel free to say hello!<br>
+                <br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
+              </div>
+              
+          </div>
+      </div>
+
+
+
+        <div class="footer">
+            <div class="content-column">
+                <img id="heart" src="img/heart.png" alt="8bit">
+                <p>Thanks for visiting my page!</p>
+                <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This is the Theme Switcher
+var isDarkThemeActive = document.documentElement.getAttribute('data-theme') === 'dark';
+document.getElementById('theme-switch').addEventListener('change', function(event) {
+  if (event.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('stylesheet').href = 'dark.css';
+    isDarkThemeActive = true;
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.getElementById('stylesheet').href = 'light.css';
+    isDarkThemeActive = false;
+  }
+});
+
+// This is the heart animation
+const heart = document.getElementById('heart');
+const pulseHeartTL = gsap.timeline({
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 3
+});
+
+pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+pulseHeartTL.play();
+
+// This is the spooky glow for the dark mode
+const glowing = document.getElementById("glowing");
+let glowingTL;
+
+function startGlowingAnimation() {
+  if (isDarkThemeActive) {
+    if (!glowingTL) {
+      glowingTL = gsap.timeline();
+      glowingTL.set("#glowing", { opacity: 0 });
+      glowingTL.to("#glowing", { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
+      glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
+      glowingTL.to("#glowing", { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
+      glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+    }
+    glowingTL.restart();
+  } else {
+    if (glowingTL) {
+      glowingTL.kill();
+      glowingTL = null;
+    }
+    gsap.set("#glowing", { opacity: 0 });
+  }
+}
+
+startGlowingAnimation();
+
+function restartGlowingAnimation() {
+  startGlowingAnimation();
+  setTimeout(restartGlowingAnimation, 5000);
+}
+
+restartGlowingAnimation();
+
+// Skull glitch animation for the dark mode
+gsap.set("#skull", { opacity: 0 });
+let skullTL;
+
+function startSkullAnimation() {
+  if (isDarkThemeActive) {
+    if (!skullTL) {
+      skullTL = gsap.timeline({ repeat: -1 });
+      skullTL.to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" })
+        .to("#skull", { opacity: 0, duration: 0.2 })
+        .to("#skull", { opacity: 1, duration: 0.2 })
+        .to("#skull", { opacity: 0, duration: 0.3 })
+        .to("#skull", { opacity: 0, duration: gsap.utils.random(7, 13) })
+        .to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" });
+    }
+    skullTL.play();
+  } else {
+    if (skullTL) {
+      skullTL.kill();
+      skullTL = null;
+    }
+    gsap.set("#skull", { opacity: 0 });
+  }
+}
+
+startSkullAnimation();
+
+function restartSkullAnimation() {
+  startSkullAnimation();
+  setTimeout(restartSkullAnimation, 5000);
+}
+
+restartSkullAnimation();
+
+    </script>
+</body>
+
+</html>

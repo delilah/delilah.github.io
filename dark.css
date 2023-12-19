@@ -12,15 +12,21 @@ body, html {
 
 /* CSS for smaller devices */
 @media (max-width: 768px) {
+    .PROJECT-block .content-row,
+    .PROJECT1-block .content-row,
     .INTRO-block .content-row,
     .ABOUT-block .content-row {
         flex-direction: column !important;
     }
 
+    .PROJECT-block .content-row div img,
+    .PROJECT1-block .content-row div img,
     .INTRO-block .content-row div img {
         order: 1;
     }
 
+    .PROJECT-block .content-row  .text-container,
+    .PROJECT1-block .content-row  .text-container,
     .INTRO-block .content-row .text-container {
         order: -1;
     }
@@ -89,13 +95,17 @@ body, html {
     color: #FF851B;
   }
 
-.INTRO-block, .ABOUT-block {
+.INTRO-block, .ABOUT-block, .PROJECT1-block  {
   flex: 1;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #383838;
+}
+
+.PROJECT-block {
+    background-color: #282828;
 }
 
 .INTRO-block img.skull{
@@ -186,4 +196,9 @@ body, html {
 
 .INTRO-block, .WORK-block, .ABOUT-block {
   padding: 50px 0; 
+}
+
+.PROJECT-block .content-row, .PROJECT1-block .content-row {
+    max-width: 900px;
+    margin: 20px;
 }
