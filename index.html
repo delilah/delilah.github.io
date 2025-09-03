@@ -1,289 +1,319 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Delilah's playground</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            z-index: 9999;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            /* light theme color */
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-        }
-
-        [data-theme="dark"] .slider {
-            background-color: #282828;
-            /* dark theme color */
-        }
-
-        input:checked+.slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-    </style>
-    <script src="gsap.min.js"></script>
-    <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
+  <meta charset="utf-8">
+  <title>Delilah Pavoni - Maker of Interactive Things and Playful Experiences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gamedev, Creative Technologist, Unity & XR, Prototyping, Interactive Installations, Experiential, Playful Experiences.">
+  <meta name="keywords" content="Unity, XR, VR, AR, Creative Technologist, Gamedev, Interaction Design, Storytelling, Experiential, Prototyping, Interactive Installations">
+  <meta property="og:title" content="Delilah Pavoni - Gamedev, Creative Technologist, Unity & XR, Prototyping, Interactive Installations, Experiential, Playful Experiences.">
+  <meta property="og:description" content="Gamedev, Creative Technologist, Unity & XR, Prototyping, Interactive Installations, Experiential, Playful Experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og-thumbnail.png">
+  <meta property="og:url" content="https://delilah.github.io/">
+  <link rel="canonical" href="https://delilah.github.io/">
+  <link rel="stylesheet" type="text/css" href="theme-switch.css">
+  <script src="gsap.min.js"></script>
+  <script src="js/obfuscator.js"></script>
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
 </head>
-
 <body>
-    <div class="frame">
-        <div class="header">
-            <img id="glowing" src="img/glow.png" class="glowing" alt="spooky">
-            <img src="img/header.png" alt="delilah 8bit">
-            <div>Delilah Pavoni</div>
-            <label class="switch">
-                <input type="checkbox" id="theme-switch">
-                <span class="slider round"></span>
-            </label>
-        </div>
-
-        <div class="INTRO-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>HELLO!</b><br>
-                    <br>I'm <b>Delilah</b>. I bring ideas to life through Games 🎮, Play, Interactive Installations, and Software Development.<br>
-                    <br>With a mix of creativity, technical know-how, expertise and leadership, 
-                    I turn ideas into something people can touch, play with, and enjoy.
-
-                    <br>
-<br>My tools of choice for creating interactive experiences are currently C# and Unity, but I have used a number of different engines/languages/tech to make magic happen ✨
-<br>
-<br>VR is my soft spot since 2006, when I first got to use it. Talk XR to me, I got stories to tell!
-<br>
-<br>Some of my favourite projects can be seen <a href="projects.html"><b>HERE</b></a>
-<br>
- <br>I like (statically) typed languages and particle systems. I juggled more languages than I can remember.<br>
-
-                    <br>Currently obsessed with plants, cats, pizza and shaders 🌐✨.<br>
-                    <br>Based in Amsterdam, NL<br><br>
-                    <div class="content-row-icons">
-                        <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
-                        <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
-                    </div>
-                </div>
-                <div>
-                <img id="skull" src="img/skull.png" alt="Intro Image" class="skull">
-                <img src="img/intro.png" alt="Intro Image">
-              </div>
-            </div>
-        </div>
-
-        <div class="WORK-block">
-            <div class="content-column">
-                <div class="text-title">
-                    <h2>WHAT I DO</h2>
-                </div>
-                <div class="text-container">
-                    <p>With a tech background, I often find myself programming, but I'm just as involved in the creative process. I enjoy wholesome projects with a purpose. And spooky things. <br>
-                        <br>I build experiences - be it games, interactive software or installations, AR/VR. My tool of choice is (currently) Unity and C#. I do explore other options as well and play with other technologies when I have the capacity to do so. <br>
-                        <br>A selection of my favourite projects can be seen <a href="projects.html"><b>HERE</b></a><br>
-                        <br>
-                        <br><b><i>Some</i> of my tasks are:</b> <br>
-                    <ul>
-                        <li>Help define project requirements and estimate timelines</li>
-                        <li>Collaborate in the creative process, turning ideas into reality</li>
-                        <li>Build Prototypes and Proof of Concept (to find the fun)</li>
-                        <li>Implementing core, game mechanics and/or interactive features</li>
-                        <li>Implement design / UI / audio</li>
-                        <li>Work with third-party APIs for various integrations</li>
-                        <li>Experiment with new and emerging technologies</li>
-                        <li>Provide onboarding and coaching to help the team grow</li>
-                        <br>
-                        <li>A task I never did? It's ok, give me some time, I'll figure it out.</li>
-                    </ul>
-                    <br>I like GIT, I use tickets and I can roll spaghetti very fast. <br>
-                    <br>I do also value and keep learning about communication, leadership, diversity and how to best support people around me. 
-                    I advocate for inclusivity and embracing a wide range of perspectives and backgrounds. <br>
-                    <br>I empower my teams by fostering open collaboration, leading by example, ensuring everyone’s voice is heard, and giving credit where it’s due. 
-                    <br>
-                    <br>Clear communication and transparency are key. I bring my experience in remote workflows to ensure the team stays aligned, helping set up efficient pipelines 
-                    and communication practices that keep everyone on the same page, whether we’re in the same room or across the globe.
-                    <br>
-                   
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="ABOUT-block">
-          <div class="content-row">
-            <div>
-              <img src="img/about.png" alt="About Image">
-            </div>
-              <div class="text-container">
-                I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, 
-                so feel free to poke me! I like getting to know like-minded people!<br><br> You might see me around while attending some events, feel free to say hello!<br>
-                <br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
-              </div>
-              
-          </div>
+  <div class="frame">
+    <header class="header" role="banner">
+      <div class="logo-container">
+        <img id="glowing" src="img/glow.png" class="glowing" alt="spooky glow decorative" aria-hidden="true">
+        <a href="index.html" class="logo-link" aria-label="Home">
+          <img src="img/header.png" alt="Pixel portrait of Delilah">
+        </a>
       </div>
+      <div aria-label="Site owner name">Delilah Pavoni</div>
+      <label class="switch" aria-label="Toggle dark mode">
+        <input type="checkbox" id="theme-switch" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+      </label>
+    </header>
 
+    <main>
+      <section class="HERO-block" aria-labelledby="hero-title">
+        <h3 id="hero-title">Game/XR/Unity Developer | Creative Technologist | Interactive Installations | Designing and Crafting Playful Experiences</h1>
 
-
-        <div class="footer">
-            <div class="content-column">
-                <img id="heart" src="img/heart.png" alt="8bit">
-                <p>Thanks for visiting my page!</p>
-                <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></p>
-            </div>
+        <div class="cta-row">
+          <a class="btn primary" href="projects.html">View All Projects</a>
+         <!-- <a class="btn primary" href="projects.html">Watch 3 minutes reel</a> -->
+          <a class="btn secondary" href="#contact-title">Get in touch</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
+      </section>
+    </main>
+  </div>
+
+  <div class="bg-section">
+    <div class="frame">
+      <section class="ABOUT-block" aria-labelledby="intro-title">
+        <div class="content-row content-row-left">
+          <div class="text-container">
+            <h2 id="intro-title">HELLO!</h2>
+            <p>
+                    <br> I'm Delilah. I bring ideas to life through Games 🎮, Play, Interactive Installations, and Software Development. <br>
+
+                    <br> With a mix of creativity, technical know-how, expertise and leadership, I turn ideas into something people can touch, play with, and enjoy. <br>
+                    
+                    <br> My tools of choice for creating games and interactive experiences are currently C# and Unity, but I have used a number of different engines/languages/tech to make magic happen ✨ <br>
+                    
+                    <br> VR is my soft spot since 2006, when I first got to use it. Talk XR to me, I got stories to tell! <br>
+                                        
+                    <br> I like (statically) typed languages and particle systems. I juggled more languages than I can remember. <br>
+                    
+                    <br> Currently obsessed with plants, cats, pizza and shaders 🌐✨. <br>
+                    
+                    <br> Based in Amsterdam, NL<br>
+                    <br><br>
+            </p>
+            <div class="content-row-icons">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener"><img src="img/icons8-linkedin-30.png" alt="LinkedIn"></a>
+              <a aria-label="GitHub" href="https://github.com/delilah/" target="_blank" rel="noopener"><img src="img/icons8-github-30.png" alt="GitHub"></a>
+            </div>
+          </div>
+          <div class="image-container">
+            <img src="img/intro.png" alt="Illustration of Delilah working">
+            <img id="skull" src="img/skull.png" alt="Decorative skull" class="skull">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="frame">
+    <main>
+      <section class="WORK-block" aria-labelledby="work-title">
+        <div class="content-column">
+          <div class="text-title"><h2 id="work-title">Selected Work</h2></div>
+          <div class="work-grid">
+            <article class="card" aria-label="Ellinikon Experience Centre">
+              <a href="projects/ellinikon.html" class="project-link" aria-label="Ellinikon details">
+                <img loading="lazy" src="img/projects/vgs_ellinikon.gif" alt="Ellinikon installation">
+              </a>
+              <h3>Experiential: Ellinikon Experience Centre</h3>
+              <p>Immersive installation software for Europe’s largest urban regeneration showcase.</p>
+              <a class="btn small" href="projects/ellinikon.html">Read more</a>
+            </article>
+            <article class="card" aria-label="Netflix: Eden Unearthed VR">
+              <a href="projects/eden.html" class="project-link" aria-label="Eden details">
+                <img loading="lazy" src="img/projects/Eden_Unearthed.jpg" alt="Eden Unearthed">
+              </a>
+              <h3>Netflix: Eden Unearthed (VR Game)</h3>
+              <p>Explore Netflix’s Eden universe in VR. FWA of the Day.</p>
+              <a class="btn small" href="projects/eden.html">Read more</a>
+            </article>
+            <article class="card" aria-label="Tic Tac Chew & Play">
+              <a href="projects/tictac.html" class="project-link" aria-label="Tic Tac details">
+                <img loading="lazy" src="img/projects/TicTacGumSnap.gif" alt="Tic Tac Chew & Play">
+              </a>
+              <h3>Tic Tac Chew & Play</h3>
+              <p>Chew‑controlled Snapchat game. FWA of the Day.</p>
+              <a class="btn small" href="projects/tictac.html">Read more</a>
+            </article>
+            <article class="card" aria-label="O21 VR">
+              <a href="projects/o21.html" class="project-link" aria-label="O21 details">
+                <img loading="lazy" src="img/projects/o21.gif" alt="O21">
+              </a>
+              <h3>O21 (VR)</h3>
+              <p>Meditative VR personal project focusing on ambience and interaction.</p>
+              <a class="btn small" href="projects/o21.html">Read more</a>
+            </article>
+
+            <article class="card" aria-label="Tetris_Twist">
+              <a href="projects/tetris.html" class="project-link" aria-label="Tetris details">
+                <img loading="lazy" src="img/projects/Tetris_Twist.gif" alt="Tetris® Twist">
+              </a>
+              <h3>Tetris® Twist</h3>
+              <p>Fresh twist on a classic IP; multiple cities progression and Marathon mode.</p>
+              <a class="btn small" href="projects/tetris.html">Read more</a>
+            </article>
+
+       
+              <a class="btn primary" href="projects.html">View More</a>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+
+  
+
+
+
+  <div class="bg-section">
+    <div class="frame">
+      <section class="ABOUT-block" aria-labelledby="what-i-do-title">
+        
+          <div class="text-container">
+            <h2 id="what-i-do-title">WHAT I DO</h2>
+            <p>With a tech background, I often find myself programming, but I'm just as involved in the creative process. I enjoy wholesome projects with a purpose. And spooky things.<br>
+                <br> I build experiences and help shaping them - be it games, products, interactive software or installations, AR/VR, taking it from scratch to final polishing.  <br>
+                <br> I collaborate closely with designers, teams and stakeholders to translate ideas into testable prototypes fast, and bridge tech and design. 
+                <br>
+                <br><b>Some of my tasks are:</b><br>
+            <ul>
+                <li>Gameplay & interaction systems (mostly Unity/C#)</li>
+                <li>Experiment with several technologies for the perfect match</li>
+                <li>Hardware/CV integrations for installations</li>
+                <li>Team leadership, onboarding, mentoring, and process</li>
+                <li>Collaborate in the creative process: brainstorming, ideation, storytelling</li>
+                <li>Prototyping sprints to de‑risk concepts</li>
+                <li>Implementing and designing core, game mechanics and/or interactive features</li>
+                <li>Implement design / UI / audio / tooling </li>
+                <li>Work with third-party APIs</li>
+                <li>Help define project requirements and estimate timelines</li>
+                <br>
+                <li>A task I never did? It's ok, give me some time, I'll figure it out.</li>
+            </ul>
+            <br>I like GIT, I use tickets and I can roll spaghetti very fast.<br>
+            <br>
+            I do also value and keep learning about communication, leadership, diversity and how to best support people around me. I advocate for inclusivity and embracing a wide range of perspectives and backgrounds.
+            <br><br>
+            I empower my teams by fostering open collaboration, leading by example, ensuring everyone’s voice is heard, and giving credit where it’s due.
+            <br><br>
+            Clear communication and transparency are key. I bring my experience in remote workflows to ensure the team stays aligned, helping set up efficient pipelines and communication practices that keep everyone on the same page, whether we’re in the same room or across the globe.
+            <br>
+            <br>
+            <br>Some of my favourite projects can be seen <a href="projects.html"><b>HERE</b></a><br>
+
+            </p>
+            <div class="content-row-icons">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener"><img src="img/icons8-linkedin-30.png" alt="LinkedIn"></a>
+              <a aria-label="GitHub" href="https://github.com/delilah/" target="_blank" rel="noopener"><img src="img/icons8-github-30.png" alt="GitHub"></a>
+            </div>
+      </section>
+    </div>
+  </div>
+
+    <div class="frame">
+      <section class="ABOUT-block" aria-labelledby="contact-title">
+        <div class="content-row content-row-right">
+          <div>
+            <img src="img/about.png" alt="About illustration">
+          </div>
+          <div class="text-container">
+            <h2 id="contact-title">Get In Touch</h2>
+            <p>
+              I love talking about new ideas, code, games, leadership, play, interaction and creative tech and am available for selected consulting opportunities.<br> 
+              <br>Got a cool project or game you're working on? I'd be excited to get a sneak peek!<br>
+                <br>
+                If you see me at an event, don't hesitate to say hello! I am friendly :)
+            </p>
+            <p>
+              Contact me via <a href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener">LinkedIn</a> or <a href="#" class="email-link">email</a>.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <script>
-        // Get the current theme from local storage when the page is loaded.
-        // If no theme was previously saved, it defaults to 'light'.
-        var currentTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        document.getElementById('stylesheet').href = currentTheme + '.css';
-        var isDarkThemeActive = currentTheme === 'dark';
 
-        // Set the "checked" status of the checkbox based on the current theme.
-        var themeSwitch = document.getElementById('theme-switch');
-        themeSwitch.checked = isDarkThemeActive;
+  <div class="footer-section">
+    <footer class="footer" role="contentinfo">
+      <div class="content-column">
+        <img id="heart" src="img/heart.png" alt="Pixel heart">
+        <p>Thanks for visiting my page!</p>
+      </div>
+    </footer>
+</div>
 
-        // This is the Theme Switcher
-        themeSwitch.addEventListener('change', function(event) {
-            if (event.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.getElementById('stylesheet').href = 'dark.css';
-                isDarkThemeActive = true;
-                // Save the current theme to local storage.
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.getElementById('stylesheet').href = 'light.css';
-                isDarkThemeActive = false;
-                // Save the current theme to local storage.
-                localStorage.setItem('theme', 'light');
-            }
-            // Restart animations to reflect changes in theme.
-            restartGlowingAnimation();
-            restartSkullAnimation();
-        });
+<div class="footer-credits">
+    <div class="content-column">
+      <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank" rel="noopener">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank" rel="noopener">Icons8</a></p>
+    </div>
+</div>
 
-// This is the heart animation
-const heart = document.getElementById('heart');
-const pulseHeartTL = gsap.timeline({
-  repeat: -1,
-  yoyo: true,
-  repeatDelay: 3
-});
+  <script>
+    // Theme boot
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.getElementById('stylesheet').href = currentTheme + '.css';
+    var isDarkThemeActive = currentTheme === 'dark';
+    var themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.checked = isDarkThemeActive;
+    themeSwitch.addEventListener('change', function (e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('stylesheet').href = 'dark.css';
+        isDarkThemeActive = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('stylesheet').href = 'light.css';
+        isDarkThemeActive = false;
+        localStorage.setItem('theme', 'light');
+      }
+      restartGlowingAnimation();
+      restartSkullAnimation();
+    });
 
-pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
-  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
-pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
-  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
-pulseHeartTL.play();
+    // Heart pulse
+    const heart = document.getElementById('heart');
+    const pulseHeartTL = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
+    pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+    pulseHeartTL.play();
 
-// This is the spooky glow for the dark mode
-const glowing = document.getElementById("glowing");
-let glowingTL;
-
-function startGlowingAnimation() {
-  if (isDarkThemeActive) {
-    if (!glowingTL) {
-      glowingTL = gsap.timeline();
-      glowingTL.set("#glowing", { opacity: 0 });
-      glowingTL.to("#glowing", { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
-      glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
-      glowingTL.to("#glowing", { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
-      glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+    // Dark-mode glow
+    const glowing = document.getElementById('glowing');
+    let glowingTL;
+    function startGlowingAnimation() {
+      if (isDarkThemeActive) {
+        if (!glowingTL) {
+          glowingTL = gsap.timeline();
+          glowingTL.set('#glowing', { opacity: 0 });
+          glowingTL.to('#glowing', { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
+          glowingTL.to('#glowing', { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+        }
+        glowingTL.restart();
+      } else {
+        if (glowingTL) { glowingTL.kill(); glowingTL = null; }
+        gsap.set('#glowing', { opacity: 0 });
+      }
     }
-    glowingTL.restart();
-  } else {
-    if (glowingTL) {
-      glowingTL.kill();
-      glowingTL = null;
+    startGlowingAnimation();
+    function restartGlowingAnimation() { startGlowingAnimation(); setTimeout(restartGlowingAnimation, 5000); }
+    restartGlowingAnimation();
+
+    // Skull glitch (dark only)
+    gsap.set('#skull', { opacity: 0 });
+    let skullTL;
+    function startSkullAnimation() {
+      if (isDarkThemeActive) {
+        if (!skullTL) {
+          skullTL = gsap.timeline({ repeat: -1 });
+          skullTL.to('#skull', { opacity: 1, duration: 0.4, ease: 'bounce' })
+            .to('#skull', { opacity: 0, duration: 0.2 })
+            .to('#skull', { opacity: 1, duration: 0.2 })
+            .to('#skull', { opacity: 0, duration: 0.3 })
+            .to('#skull', { opacity: 0, duration: gsap.utils.random(7, 13) })
+            .to('#skull', { opacity: 1, duration: 0.4, ease: 'bounce' });
+        }
+        skullTL.play();
+      } else {
+        if (skullTL) { skullTL.kill(); skullTL = null; }
+        gsap.set('#skull', { opacity: 0 });
+      }
     }
-    gsap.set("#glowing", { opacity: 0 });
-  }
-}
+    startSkullAnimation();
+    function restartSkullAnimation() { startSkullAnimation(); }
 
-startGlowingAnimation();
-
-function restartGlowingAnimation() {
-  startGlowingAnimation();
-  setTimeout(restartGlowingAnimation, 5000);
-}
-
-restartGlowingAnimation();
-
-// Skull glitch animation for the dark mode
-gsap.set("#skull", { opacity: 0 });
-let skullTL;
-
-function startSkullAnimation() {
-  if (isDarkThemeActive) {
-    if (!skullTL) {
-      skullTL = gsap.timeline({ repeat: -1 });
-      skullTL.to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" })
-        .to("#skull", { opacity: 0, duration: 0.2 })
-        .to("#skull", { opacity: 1, duration: 0.2 })
-        .to("#skull", { opacity: 0, duration: 0.3 })
-        .to("#skull", { opacity: 0, duration: gsap.utils.random(7, 13) })
-        .to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" });
-    }
-    skullTL.play();
-  } else {
-    if (skullTL) {
-      skullTL.kill();
-      skullTL = null;
-    }
-    gsap.set("#skull", { opacity: 0 });
-  }
-}
-
-startSkullAnimation();
-
-function restartSkullAnimation() {
-  startSkullAnimation();
-  setTimeout(restartSkullAnimation, 5000);
-}
-
-restartSkullAnimation();
-
-    </script>
+    // No homepage modal; project links navigate to a dedicated page template
+  </script>
 </body>
-
 </html>

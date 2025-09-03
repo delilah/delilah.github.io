@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Toyota Mobile Assistant Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mobile assistant application for Toyota brand engagement.">
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="../light.css">
+  <link rel="stylesheet" type="text/css" href="../theme-switch.css">
+  <script src="../gsap.min.js"></script>
+  <script src="../js/data.js"></script>
+</head>
+<body>
+  <div class="frame">
+    <header class="header" role="banner">
+      <div class="logo-container">
+        <img id="glowing" src="../img/glow.png" class="glowing" alt="spooky glow decorative" aria-hidden="true">
+        <a href="../index.html" class="logo-link" aria-label="Home">
+          <img src="../img/header.png" alt="Pixel portrait of Delilah">
+        </a>
+      </div>
+      <div aria-label="Site owner name">Delilah Pavoni</div>
+      <label class="switch" aria-label="Toggle dark mode">
+        <input type="checkbox" id="theme-switch" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+      </label>
+    </header>
+
+    <main>
+      <section class="HERO-block" aria-labelledby="hero-title">
+        <h3 id="hero-title">Game/XR/Unity Developer | Creative Technologist | Interactive Installations | Designing and Crafting Playful Experiences</h3>
+      </section>
+
+      <div class="content-column">
+        <p><a href="../projects.html" class="btn secondary">← Back to Projects</a></p>
+      </div>
+    </main>
+  </div>
+
+  <div class="bg-section">
+    <div class="frame">
+      <div class="INTRO-block">
+        <div class="content-column">
+          <h1>Toyota (Mobile Assistant)</h1>
+          <p class="hero-sub">Mobile assistant application for Toyota brand engagement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame">
+    <main>
+      <div class="WORK-block">
+        <div class="content-column">
+          <div class="text-title"><h2>Video</h2></div>
+          <div class="text-container">
+            <div class="video-container">
+              <video class="hero-video" preload="metadata" poster="../img/projects/Toyota-Driver-Companion.jpg" loop muted>
+                <source src="../img/projects/toyota/Toyota-Driver-Companion.mp4" type="video/mp4">
+              </video>
+              <div class="play-button-overlay">
+                <svg viewBox="0 0 24 24" width="72" height="72">
+                  <path d="M8 5v14l11-7z" fill="white" fill-opacity="0.9"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="WORK-block">
+        <div class="content-column">
+          <div class="text-title"><h2>Description</h2></div>
+          <div class="text-container">
+            <h2>Toyota Driver's Companion</h2>
+            <p>Cloud computing and AI have been used to reinvent the owner’s manual with the Driver’s Companion virtual assistant, developed by Toyota and Google. </p>
+            <p>Powered by Google Cloud and featuring a voice-activated AI named Joya, the system allows Sienna owners to ask natural language questions and receive real-time responses. </p>
+            <p>With interactive features, VIN-personalized experiences, and guidance on everything from dashboard buttons to driver assistance systems, the Driver’s Companion helps owners learn about their vehicles in a way that is engaging, accessible, and easy to look forward to using. </p>
+            <p>This collaboration shows how emerging technology can transform essential but routine resources into personalized, intuitive experiences.</p>
+           <ul>
+              <li>Tech: Unity</li>
+              <li>Platform: Mobile</li> 
+              <li>Studio: Monks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="WORK-block">
+        <div class="content-column">
+          <div class="text-title"><h2>Gallery</h2></div>
+          <div class="work-grid">
+            <article class="card">
+              <a href="../img/projects/toyota/toyota_1.png" target="_blank" rel="noopener noreferrer">
+                <img src="../img/projects/toyota/toyota_1.png" alt="Toyota Mobile Assistant">
+              </a>
+            </article>
+            <article class="card">
+              <a href="../img/projects/toyota/toyota_2.png" target="_blank" rel="noopener noreferrer">
+                <img src="../img/projects/toyota/toyota_2.png" alt="Toyota Mobile Assistant">
+              </a>
+            </article>
+            <article class="card">
+              <a href="../img/projects/toyota/toyota_3.png" target="_blank" rel="noopener noreferrer">
+                <img src="../img/projects/toyota/toyota_3.png" alt="Toyota Mobile Assistant">
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-column">
+        <p><a href="../projects.html" class="btn secondary">← Back to Projects</a></p>
+      </div>
+      
+    </main>
+  </div>
+
+  <div class="footer-section">
+    <footer class="footer" role="contentinfo">
+      <div class="content-column">
+        <img id="heart" src="../img/heart.png" alt="Pixel heart">
+        <p>Thanks for visiting my page!</p>
+        <p>Contact me via <a href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener">LinkedIn</a> or <a href="../index.html#contact-title">email</a>.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="footer-credits">
+    <div class="content-column">
+      <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank" rel="noopener">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank" rel="noopener">Icons8</a></p>
+    </div>
+  </div>
+
+  <script>
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.getElementById('stylesheet').href = '../' + currentTheme + '.css';
+    var isDarkThemeActive = currentTheme === 'dark';
+    var themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.checked = isDarkThemeActive;
+    themeSwitch.addEventListener('change', function (event) {
+      if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('stylesheet').href = '../dark.css';
+        isDarkThemeActive = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('stylesheet').href = '../light.css';
+        isDarkThemeActive = false;
+        localStorage.setItem('theme', 'light');
+      }
+      restartGlowingAnimation();
+    });
+
+    // Heart pulse
+    const heart = document.getElementById('heart');
+    const pulseHeartTL = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
+    pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+
+    // Dark-mode glow
+    const glowing = document.getElementById('glowing');
+    let glowingTL;
+    function startGlowingAnimation() {
+      if (isDarkThemeActive) {
+        if (!glowingTL) {
+          glowingTL = gsap.timeline();
+          glowingTL.set('#glowing', { opacity: 0 });
+          glowingTL.to('#glowing', { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
+          glowingTL.to('#glowing', { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+        }
+        glowingTL.restart();
+      } else {
+        if (glowingTL) { glowingTL.kill(); glowingTL = null; }
+        gsap.set('#glowing', { opacity: 0 });
+      }
+    }
+    startGlowingAnimation();
+    function restartGlowingAnimation() { startGlowingAnimation(); setTimeout(restartGlowingAnimation, 5000); }
+    restartGlowingAnimation();
+  </script>
+  <script src="../js/video-player.js"></script>
+</body>
+</html>

@@ -1,404 +1,381 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Delilah's playground</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            z-index: 9999;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            /* light theme color */
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-        }
-
-        [data-theme="dark"] .slider {
-            background-color: #282828;
-            /* dark theme color */
-        }
-
-        input:checked+.slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-    </style>
-    <script src="gsap.min.js"></script>
-    <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
+  <meta charset="utf-8">
+  <title>Projects - Delilah Pavoni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected projects: XR, installations, experiential and games. Case studies and awards.">
+  <style>
+    .switch{position:relative;display:inline-block;width:60px;height:34px;z-index:9999}
+    .switch input{opacity:0;width:0;height:0}
+    .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccc;transition:.4s}
+    .slider:before{position:absolute;content:"";height:26px;width:26px;left:4px;bottom:4px;background:#fff;transition:.4s}
+    [data-theme="dark"] .slider{background:#383838}
+    input:checked+.slider:before{transform:translateX(26px)}
+    .slider.round{border-radius:34px}
+    .slider.round:before{border-radius:50%}
+  </style>
+  <script src="gsap.min.js"></script>
+  <link id="stylesheet" rel="stylesheet" type="text/css" href="light.css">
 </head>
-
 <body>
-    <div class="frame">
-        <div class="header">
-            <img id="glowing" src="img/glow.png" class="glowing" alt="spooky">
-            <img src="img/header.png" alt="delilah 8bit">
-            <div>Delilah Pavoni</div>
-            <label class="switch">
-                <input type="checkbox" id="theme-switch">
-                <span class="slider round"></span>
-            </label>
-        </div>
-
-        <div class="INTRO-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>SHOW TIME!</b><br>
-                    <br>Here are some of my favourite projects.
-                    <br>
-                    <br>This is just an overview, not an extensive portfolio. Ask me more about my work!
-                    <br><br>(or <a href="index.html">go back to previous page</a>)
-                    <br><br>
-                    
-                    <div class="content-row-icons">
-                        <a href="https://www.linkedin.com/in/delilah"><img src="img/icons8-linkedin-30.png" alt="linkedin"></a>
-                        <a href="https://github.com/delilah/"><img src="img/icons8-github-30.png" alt="github"></a>
-                    </div>
-                </div>
-                <div>
-                <img id="skull" src="img/skull.png" alt="Intro Image" class="skull">
-                <img src="img/intro.png" alt="Intro Image">
-              </div>
-            </div>
-        </div>
-
-
-        <div class="PROJECT-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>O21 (VR Game)</b><br>
-                    <ul>
-                        <li><a href="https://delilah.itch.io/o21">Itch.io O21 page and free download</a></li>
-                    </ul>
-                    <br>
-                    <br>A meditative VR experience. Observe the world you're immersed in. <br>
-                    <br>Interact with the crystals to see and hear how the environment around you changes according to your actions.<br>
-                    <br>Requires a VR headset and tracked controllers.<br>                    <br>
-                </div>
-                <div>
-                    <img src="img/projects/o21.gif" alt="o21">
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="PROJECT1-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>Cable Detective - AWS re:Invent</b><br>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=cSw3AHT8v-g">Game is not available online anymore, but you can see a walkthrough thanks to this YouTuber - (link to video)</a></li>
-                    </ul>
-                    <br>
-                    Help save this year's AWS re:Invent! <br>Can you solve the mystery of the twisted cable tangler?<br>
-                    <br>
-                </div>
-                <div>
-                    <img src="img/projects/cabledetective.jpeg" alt="Intro Image">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="PROJECT-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>Eden Unhearted (VR Game)</b><br>
-                    <ul>
-                        <li>🏆 <a href="https://thefwa.com/cases/eden-unearthed-vr-game"><b>Award</b>: FWA of the day - 12 Nov 2021</a></li>
-                    </ul>
-                    <br>
-                    <br>Explore the world of Netflix’s original anime series, Eden, by diving into a VR game that takes you on a trip through the show’s environment. <br>
-                    <br>Bike through landscapes featured in the series, collecting apples and dodging obstacles while getting a close-up look at Eden’s luscious scenery.<br>
-                    
-                </div>
-                <div>
-                    <img src="img/projects/Eden_Unearthed.jpg" alt="Intro Image">
-                </div>
-            </div>
-        </div>
-
-        
-
-        <div class="PROJECT1-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>Tic Tac GUM: Chew & Play</b><br>
-                    <ul>
-                        <li>🏆 <a href="https://thefwa.com/cases/tic-tac-gum-chew-play"><b>Award</b>: FWA of the day - 22 June 2018</a></li>
-                        <li>📰 <a href="https://www.lbbonline.com/news/snapchat-launches-first-ever-chew-powered-snapchat-lens-games-with-tic-tac-gum">lbbonline: First ever chew powered snapchat lens games</a></li>
-                    </ul>
-                    <br>
-                    
-                    <br>Styled in 8-bit and starring your mouth as a controller, Chew & Play is the world’s first Snapchat gamified lens you control by chewing.<br>
-                    
-                </div>
-                <div>
-                    <img src="img/projects/TicTacGumSnap.gif" alt="Tic Tac Gum">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="PROJECT-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>Tetris Twist</b><br>
-                    <ul>
-                        <li>📰 <a href="https://tetris.com/product/10/tetris-twist">Official News</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=bONVUFNQ4w4">Complete walkthrough (YouTube)</a></li>
-                    </ul>
-
-                    <br>In Tetris Twist, you'll puzzle your way through different cities. Discover new, fun ways to play Tetris with a twist, or play Marathon Mode to experience the traditional gameplay.<br>
-                    
-                </div>
-                <div>
-                    <img src="img/projects/Tetris_Twist.gif" alt="Tetris Twist">
-                </div>
-            </div>
-        </div>
-
-        <div class="PROJECT1-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>ELLINIKON Experience Centre</b><br>
-                    <ul>
-                        <li>📰 <a href="https://media.monks.com/case-studies/ellinikon-experience-centre">Ellinikon: case study</a></li>
-                    </ul>
-                    <br>An old airport hangar becomes an interactive experience center for Ellinikon. <br>
-                    <br>This ambitious project showcases the future of urban spaces through a synergistic blend of physical and digital design.<br> 
-                    <br>Visitors are invited to immerse themselves in the past, present, and future of the area, offering a unique glimpse into Europe's largest urban regeneration project.
-                    <br>
-                    <br>In the image: one of the installations I built software for.
-                </div>
-                <div>
-                    <img src="img/projects/vgs_ellinikon.gif" alt="Ellinikon">
-                </div>
-            </div>
-        </div>
-
-        <div class="PROJECT-block">
-            <div class="content-row">
-                <div class="text-container">
-                    <b>Shiseido - 'The Living Red Art Show'</b><br>
-                    <ul>
-                        <li>📰 <a href="https://www.moodiedavittreport.com/shiseido-and-cdfg-make-powerful-statement-in-hainan-with-the-living-red-art-show/">The Living Red Art Show: The Moodie Davitt Report</a></li>
-                    </ul>
-                    <br>
-                    <br>Pop up Stand and experience for Shiseid and the project "The Living Red Art Show". 
-                    <br> For this, an interactive application was built. Digital face scan, skin  to promote beauty products in a fresh and entertaining way.
-                    <br>
-                    <br>Image courtesy of moodiedavittreport and depicts the software that was created for this installation.
-
-                </div>
-                <div>
-                    <img src="img/projects/shiseido_livingred.jpg" alt="Shiseido Living Red">
-                </div>
-            </div>
-        </div>
-
-        <div class="PROJECT1-block">
-            <div class="content-row">
-                <div class="text-container">
-                 <br>
-                    
-                </div>
-            
-            </div>
-        </div>
-
-        <div class="WORK-block">
-            <div class="content-column">
-                <div class="text-title">
-                    <h2>Some other projects I contributed at that won awards</h2>
-                </div>
-                <div class="text-container">
-                    <p>
-                    <ul>
-                        <li>🏆 <a href="https://thefwa.com/cases/anne-frank-house-the-bookcase-for-tolerance"><b>Award</b>: Anne Frank: BookCase for Tolerance</a></li>
-                        <li>🏆 <a href="https://thefwa.com/cases/signal-little-brush-big-brush-ar-experience"><b>Award</b>: Little Brush Big Brush</a></li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="ABOUT-block">
-          <div class="content-row">
-            <div>
-              <img src="img/about.png" alt="About Image">
-            </div>
-              <div class="text-container">
-                I always like to discuss ideas and code/technologies, I enjoy sneak peeks of what you're working on and try your games, 
-                so feel free to poke me! I like getting to know like-minded people!<br><br> You might see me around while attending some events, feel free to say hello!<br>
-                <br>Contact me via <a href="https://www.linkedin.com/in/delilah">LinkedIn</a> or <a href="mailto:delst&#x75;ff&#x40;&#x67;mail.com">email</a>
-              </div>
-              
-          </div>
+  <div class="frame">
+    <header class="header" role="banner">
+      <div class="logo-container">
+        <img id="glowing" src="img/glow.png" class="glowing" alt="spooky glow decorative" aria-hidden="true">
+        <a href="index.html" class="logo-link" aria-label="Home">
+          <img src="img/header.png" alt="Pixel portrait of Delilah">
+        </a>
       </div>
+      <div aria-label="Site owner name">Delilah Pavoni</div>
+      <label class="switch" aria-label="Toggle dark mode">
+        <input type="checkbox" id="theme-switch" aria-checked="false" role="switch">
+        <span class="slider round"></span>
+      </label>
+    </header>
 
+    <main>
+      <section class="HERO-block" aria-labelledby="hero-title">
+        <h3 id="hero-title">Game/XR/Unity Developer | Creative Technologist | Interactive Installations | Designing and Crafting Playful Experiences</h3>
 
-
-        <div class="footer">
-            <div class="content-column">
-                <img id="heart" src="img/heart.png" alt="8bit">
-                <p>Thanks for visiting my page!</p>
-                <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></p>
-            </div>
+        <div class="cta-row">
+          <a class="btn primary" href="index.html">Start Page</a>
+          <!-- <a class="btn primary" href="projects.html">Watch 3 minutes reel</a> -->
+          <a class="btn secondary" href="index.html#contact-title">Get in touch</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
+      </section>
+    </main>
+  </div>
+
+  <div class="bg-section">
+    <div class="frame">
+      <div class="INTRO-block">
+        <div class="content-row content-row-left">
+          <div class="text-container">
+            <b>SHOW TIME!</b><br>
+            <br>Selected projects showcase. Many projects involve whitelabel work or confidential client agreements, so this portfolio represents a subset of my experience. If you don't see a specific technology or project type, feel free to ask - I can discuss relevant skills and experience.
+            <br><br>
+            <div class="content-row-icons">
+              <a href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener"><img src="img/icons8-linkedin-30.png" alt="LinkedIn"></a>
+              <a href="https://github.com/delilah/" target="_blank" rel="noopener"><img src="img/icons8-github-30.png" alt="GitHub"></a>
+            </div>
+          </div>
+          <div class="image-container">
+            <img id="skull" src="img/skull.png" alt="" class="skull" aria-hidden="true">
+            <img src="img/intro.png" alt="Illustration" class="intro-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="WORK-block">
+      <div class="content-column">
+        <div class="text-title"><h2>Projects</h2></div>
+        <div class="work-grid">
+      
+
+
+
+          <article id="eden" class="card">
+            <a href="projects/eden.html" class="project-link" aria-label="Eden details">
+              <img loading="lazy" src="img/projects/Eden_Unearthed.jpg" alt="Eden Unearthed">
+            </a>
+            <h3>Netflix: Eden Unearthed (VR Game)</h3>
+            <p>Explore Netflix’s Eden universe in VR. FWA of the Day.</p>
+            <p>
+              <a class="btn small" href="projects/eden.html">read more</a>
+              <a class="btn small" href="https://thefwa.com/cases/eden-unearthed-vr-game" target="_blank" rel="noopener">FWA case</a>
+            </p>
+          </article>
+
+          <article id="tictac" class="card">
+            <a href="projects/tictac.html" class="project-link" aria-label="Tic Tac details">
+              <img loading="lazy" src="img/projects/TicTacGumSnap.gif" alt="Tic Tac Gum Snapchat lens">
+            </a>
+            <h3>Tic Tac GUM: Chew & Play</h3>
+            <p>First chew‑controlled Snapchat game. FWA of the Day (22 Jun 2018).</p>
+            <p>
+              <a class="btn small" href="projects/tictac.html">read more</a>
+              <a class="btn small" href="https://thefwa.com/cases/tic-tac-gum-chew-play" target="_blank" rel="noopener">FWA case</a>
+              <a class="btn small" href="https://www.lbbonline.com/news/snapchat-launches-first-ever-chew-powered-snapchat-lens-games-with-tic-tac-gum" target="_blank" rel="noopener">Press</a>
+            </p>
+          </article>
+
+          <article id="ellinikon" class="card">
+            <a href="projects/ellinikon.html" class="project-link" aria-label="Ellinikon details">
+              <img loading="lazy" src="img/projects/vgs_ellinikon.gif" alt="Ellinikon Experience Centre">
+            </a>
+            <h3>Experiential: Ellinikon Experience Centre</h3>
+            <p>Interactive installation software for a large-scale urban regeneration showcase.</p>
+            <p>
+              <a class="btn small" href="projects/ellinikon.html">read more</a>
+              <a class="btn small" href="https://media.monks.com/case-studies/ellinikon-experience-centre" target="_blank" rel="noopener">Case study</a>
+            </p>
+          </article>
+
+
+
+          <article id="tetris" class="card">
+            <a href="projects/tetris.html" class="project-link" aria-label="Tetris details">
+              <img loading="lazy" src="img/projects/Tetris_Twist.gif" alt="Tetris Twist">
+            </a>
+            <h3>Tetris® Twist</h3>
+            <p>Fresh twist on a classic IP; multiple cities progression and Marathon mode.</p>
+            <p>
+              <a class="btn small" href="projects/tetris.html">read more</a>
+              <a class="btn small" href="https://tetris.com/product/10/tetris-twist" target="_blank" rel="noopener">Official</a>
+            </p>
+          </article>
+
+
+
+          <article id="shiseido" class="card">
+            <a href="projects/shiseido.html" class="project-link" aria-label="Shiseido details">
+              <img loading="lazy" src="img/projects/shiseido_livingred.jpg" alt="Shiseido Living Red installation">
+            </a>
+            <h3>Experiential: Shiseido - The Living Red Art Show</h3>
+            <p>Pop-up experiential installation with face scanning and interactive content.</p>
+            <p>
+              <a class="btn small" href="projects/shiseido.html">read more</a>
+              <a class="btn small" href="https://www.moodiedavittreport.com/shiseido-and-cdfg-make-powerful-statement-in-hainan-with-the-living-red-art-show/" target="_blank" rel="noopener">Article</a>
+            </p>
+          </article>
+
+          <article id="aws" class="card">
+            <a href="projects/aws.html" class="project-link" aria-label="AWS details">
+              <img loading="lazy" src="img/projects/cabledetective.png" alt="Cable Detective screenshot">
+            </a>
+            <h3>Cable Detective - AWS re:Invent</h3>
+            <p>Web game activation; puzzle/mystery theme. Built for event engagement.</p>
+            <p>
+              <a class="btn small" href="projects/aws.html">read more</a>
+            </p>
+          </article>
+
+
+        </div>
+      </div>
     </div>
 
-    <script>
-        
-        // Get the current theme from local storage when the page is loaded.
-        // If no theme was previously saved, it defaults to 'light'.
-        var currentTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        document.getElementById('stylesheet').href = currentTheme + '.css';
-        var isDarkThemeActive = currentTheme === 'dark';
+  </div>
 
-        // Set the "checked" status of the checkbox based on the current theme.
-        var themeSwitch = document.getElementById('theme-switch');
-        themeSwitch.checked = isDarkThemeActive;
+  <div class="bg-section">
+    <div class="frame">
+      <div class="WORK-block">
+        <div class="content-column">
+          <div class="work-grid">
 
-        // This is the Theme Switcher
-        themeSwitch.addEventListener('change', function(event) {
-            if (event.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.getElementById('stylesheet').href = 'dark.css';
-                isDarkThemeActive = true;
-                // Save the current theme to local storage.
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.getElementById('stylesheet').href = 'light.css';
-                isDarkThemeActive = false;
-                // Save the current theme to local storage.
-                localStorage.setItem('theme', 'light');
-            }
-            // Restart animations to reflect changes in theme.
-            restartGlowingAnimation();
-            restartSkullAnimation();
-        });
-// This is the heart animation
-const heart = document.getElementById('heart');
-const pulseHeartTL = gsap.timeline({
-  repeat: -1,
-  yoyo: true,
-  repeatDelay: 3
-});
+          <article id="annefrank" class="card">
+            <a href="projects/annefrank.html" class="project-link" aria-label="Anne Frank details">
+              <img loading="lazy" src="img/projects/annefrank.jpg" alt="Anne Frank: BookCase for Tolerance">
+            </a>
+            <h3>Anne Frank: BookCase for Tolerance (AR)</h3>
+            <p>AR experience exploring tolerance and history through interactive storytelling. FWA of the Day.</p>
+            <p>
+              <a class="btn small" href="projects/annefrank.html">read more</a>
+              <a class="btn small" href="https://thefwa.com/cases/anne-frank-house-the-bookcase-for-tolerance" target="_blank" rel="noopener">FWA case</a>
+            </p>
+          </article>
 
-pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
-  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
-pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
-  .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
-pulseHeartTL.play();
+          <article id="littlebrush" class="card">
+            <a href="projects/littlebrush.html" class="project-link" aria-label="Little Brush details">
+              <img loading="lazy" src="img/projects/lbbb.png" alt="Little Brush Big Brush">
+            </a>
+            <h3>Little Brush Big Brush (AR)</h3>
+            <p>AR experience for Signal toothpaste brand activation. FWA of the Day.</p>
+            <p>
+              <a class="btn small" href="projects/littlebrush.html">read more</a>
+              <a class="btn small" href="https://thefwa.com/cases/signal-little-brush-big-brush-ar-experience" target="_blank" rel="noopener">FWA case</a>
+            </p>
+          </article>
 
-// This is the spooky glow for the dark mode
-const glowing = document.getElementById("glowing");
-let glowingTL;
+          <article id="toyota" class="card">
+            <a href="projects/toyota.html" class="project-link" aria-label="Toyota details">
+              <img loading="lazy" src="img/projects/Toyota-Driver-Companion.jpg" alt="Toyota Mobile Assistant">
+            </a>
+            <h3>Toyota (Mobile Assistant)</h3>
+            <p>Mobile assistant application for Toyota brand engagement.</p>
+            <p>
+              <a class="btn small" href="projects/toyota.html">read more</a>
+            </p>
+          </article>
 
-function startGlowingAnimation() {
-  if (isDarkThemeActive) {
-    if (!glowingTL) {
-      glowingTL = gsap.timeline();
-      glowingTL.set("#glowing", { opacity: 0 });
-      glowingTL.to("#glowing", { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
-      glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
-      glowingTL.to("#glowing", { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
-      glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+          <article id="o21" class="card">
+            <a href="projects/o21.html" class="project-link" aria-label="O21 details">
+              <img loading="lazy" src="img/projects/o21.gif" alt="O21 VR">
+            </a>
+            <h3>O21 (VR Game)</h3>
+            <p>Meditative VR experience focused on ambience and player-driven interaction.</p>
+            <p>
+              <a class="btn small" href="projects/o21.html">read more</a>
+              <a class="btn small" href="https://delilah.itch.io/o21" target="_blank" rel="noopener">Itch.io page</a>
+            </p>
+          </article>
+
+          <article id="meta" class="card">
+            <a href="projects/meta.html" class="project-link" aria-label="Meta details">
+              <img loading="lazy" src="img/projects/multipeer/NRP_Group_Effects_Messenger.webp" alt="Meta">
+            </a>
+            <h3>Meta: AR Group Effects (Messenger)</h3>
+            <p>AR experiences for video calls on Messenger using Spark AR Multipeer API. Interactive multiplayer effects for shared video calling experiences.</p>
+            <p>
+              <a class="btn small" href="projects/meta.html">read more</a>
+            </p>
+          </article>
+
+          <article id="lego" class="card">
+            <a href="projects/lego.html" class="project-link" aria-label="LEGO details">
+              <img loading="lazy" src="img/projects/LEGO_Logo_CMYK.jpg" alt="LEGO upcoming product">
+            </a>
+            <h3>LEGO: upcoming product</h3>
+            <p>Upcoming product development for LEGO brand experience.</p>
+            <p>
+              <a class="btn small" href="projects/lego.html">read more</a>
+            </p>
+          </article>
+
+
+        </div>   </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="frame">
+    <section class="ABOUT-block" aria-labelledby="contact-title">
+      <div class="content-row content-row-right">
+        <div>
+          <img src="img/about.png" alt="About illustration">
+        </div>
+        <div class="text-container">
+          <p>
+            I love talking about new ideas, code, games, leadership, play, interaction and creative tech and am available for selected consulting opportunities.<br> 
+            <br>Got a cool project or game you're working on? I'd be excited to get a sneak peek!<br>
+              <br>
+              If you see me at an event, don't hesitate to say hello! I am friendly :)
+          </p>
+          <p>
+            Contact me via <a href="https://www.linkedin.com/in/delilah" target="_blank" rel="noopener">LinkedIn</a> or 
+            <a href="index.html#contact-title">email</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="footer-section">
+      <footer class="footer" role="contentinfo">
+        <div class="content-column">
+          <img id="heart" src="img/heart.png" alt="Pixel heart">
+          <p>Thanks for visiting my page!</p>
+        </div>
+      </footer>
+  </div>
+
+  <div class="footer-credits">
+      <div class="content-column">
+        <p>Amazing illustrations by <a href="https://www.instagram.com/patrick_macchi" target="_blank" rel="noopener">Patrick Macchi</a><br> Social Icons by <a href="https://icons8.com/" target="_blank" rel="noopener">Icons8</a></p>
+      </div>
+</div>
+
+  <script>
+    // Email obfuscation
+    document.addEventListener('DOMContentLoaded', function() {
+      const emailLinks = document.querySelectorAll('.email-link');
+      emailLinks.forEach(link => {
+        const user = link.getAttribute('data-user');
+        const domain = link.getAttribute('data-domain');
+        link.setAttribute('href', 'mailto:' + user + '@' + domain);
+        link.textContent = user + '@' + domain;
+      });
+    });
+
+    // Theme management
+    var currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.getElementById('stylesheet').href = currentTheme + '.css';
+    var isDarkThemeActive = currentTheme === 'dark';
+    var themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.checked = isDarkThemeActive;
+    themeSwitch.addEventListener('change', function (event) {
+      if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('stylesheet').href = 'dark.css';
+        isDarkThemeActive = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('stylesheet').href = 'light.css';
+        isDarkThemeActive = false;
+        localStorage.setItem('theme', 'light');
+      }
+      restartGlowingAnimation();
+      restartSkullAnimation();
+    });
+
+    // Heart pulse
+    const heart = document.getElementById('heart');
+    const pulseHeartTL = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
+    pulseHeartTL.to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1.2, ease: Power1.easeInOut })
+      .to(heart, 0.3, { scale: 1, ease: Power1.easeInOut });
+
+    // Glowing dark effect
+    const glowing = document.getElementById('glowing');
+    let glowingTL;
+    function startGlowingAnimation() {
+      if (isDarkThemeActive) {
+        if (!glowingTL) {
+          glowingTL = gsap.timeline();
+          glowingTL.set('#glowing', { opacity: 0 });
+          glowingTL.to('#glowing', { opacity: 1, duration: 0.5, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 0.6, ease: Power1.easeInOut });
+          glowingTL.to('#glowing', { opacity: 0, duration: 0.4, ease: Power1.easeInOut });
+          glowingTL.to({}, { duration: 6, ease: Power1.easeInOut });
+        }
+        glowingTL.restart();
+      } else {
+        if (glowingTL) { glowingTL.kill(); glowingTL = null; }
+        gsap.set('#glowing', { opacity: 0 });
+      }
     }
-    glowingTL.restart();
-  } else {
-    if (glowingTL) {
-      glowingTL.kill();
-      glowingTL = null;
+    startGlowingAnimation();
+    function restartGlowingAnimation() { startGlowingAnimation(); setTimeout(restartGlowingAnimation, 5000); }
+    restartGlowingAnimation();
+
+    // Skull glitch (dark only)
+    gsap.set('#skull', { opacity: 0 });
+    let skullTL;
+    function startSkullAnimation() {
+      if (isDarkThemeActive) {
+        if (!skullTL) {
+          skullTL = gsap.timeline({ repeat: -1 });
+          skullTL.to('#skull', { opacity: 1, duration: 0.4, ease: 'bounce' })
+            .to('#skull', { opacity: 0, duration: 0.2 })
+            .to('#skull', { opacity: 1, duration: 0.2 })
+            .to('#skull', { opacity: 0, duration: 0.3 })
+            .to('#skull', { opacity: 0, duration: gsap.utils.random(7, 13) })
+            .to('#skull', { opacity: 1, duration: 0.4, ease: 'bounce' });
+        }
+        skullTL.play();
+      } else {
+        if (skullTL) { skullTL.kill(); skullTL = null; }
+        gsap.set('#skull', { opacity: 0 });
+      }
     }
-    gsap.set("#glowing", { opacity: 0 });
-  }
-}
-
-startGlowingAnimation();
-
-function restartGlowingAnimation() {
-  startGlowingAnimation();
-  setTimeout(restartGlowingAnimation, 5000);
-}
-
-restartGlowingAnimation();
-
-// Skull glitch animation for the dark mode
-gsap.set("#skull", { opacity: 0 });
-let skullTL;
-
-function startSkullAnimation() {
-  if (isDarkThemeActive) {
-    if (!skullTL) {
-      skullTL = gsap.timeline({ repeat: -1 });
-      skullTL.to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" })
-        .to("#skull", { opacity: 0, duration: 0.2 })
-        .to("#skull", { opacity: 1, duration: 0.2 })
-        .to("#skull", { opacity: 0, duration: 0.3 })
-        .to("#skull", { opacity: 0, duration: gsap.utils.random(7, 13) })
-        .to("#skull", { opacity: 1, duration: 0.4, ease: "bounce" });
-    }
-    skullTL.play();
-  } else {
-    if (skullTL) {
-      skullTL.kill();
-      skullTL = null;
-    }
-    gsap.set("#skull", { opacity: 0 });
-  }
-}
-
-startSkullAnimation();
-
-function restartSkullAnimation() {
-  startSkullAnimation();
-  setTimeout(restartSkullAnimation, 5000);
-}
-
-restartSkullAnimation();
-
-    </script>
+    startSkullAnimation();
+    function restartSkullAnimation() { startSkullAnimation(); setTimeout(restartSkullAnimation, 5000); }
+    restartSkullAnimation();
+  </script>
 </body>
-
 </html>
